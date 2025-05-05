@@ -72,6 +72,11 @@ where
         }
     }
 
+    pub fn get_network_driver(&self) -> Option<&T> {
+        self.connection
+            .map(|network_connection| network_connection.get())
+    }
+
     async fn connect_to_broker_v5<'b>(&'b mut self) -> Result<(), ReasonCode> {
         if self.connection.is_none() {
             return Err(ReasonCode::NetworkError);

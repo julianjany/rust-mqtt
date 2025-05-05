@@ -43,6 +43,10 @@ where
         Self { io }
     }
 
+    pub fn get(&self) -> &T {
+        &self.io
+    }
+
     /// Send the data from `buffer` via TCP connection.
     pub async fn send(&mut self, buffer: &[u8]) -> Result<(), ReasonCode> {
         self.io

@@ -65,6 +65,10 @@ where
         }
     }
 
+    fn get_network_driver(&self) -> Option<&T> {
+        self.raw.get_network_driver()
+    }
+
     /// Method allows client connect to server. Client is connecting to the specified broker
     /// in the `ClientConfig`. Method selects proper implementation of the MQTT version based on the config.
     /// If the connection to the broker fails, method returns Err variable that contains
