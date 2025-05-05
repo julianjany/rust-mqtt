@@ -65,7 +65,7 @@ where
         }
     }
 
-    fn get_network_driver(&self) -> Option<&T> {
+    pub fn get_network_driver(&self) -> Option<&T> {
         self.raw.get_network_driver()
     }
 
