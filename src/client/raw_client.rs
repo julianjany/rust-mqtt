@@ -74,6 +74,7 @@ where
 
     pub fn get_network_driver(&self) -> Option<&T> {
         self.connection
+            .as_ref()
             .map(|network_connection| network_connection.get())
     }
 
